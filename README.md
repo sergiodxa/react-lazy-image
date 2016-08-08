@@ -45,7 +45,7 @@ Set the amount of pixel near the viewport the component should be to start the i
 The image source path to load.
 
 ### `defaultSource: ?string`
-The default image source path or base64. If isn't defined the it uses a SVG animated spinner.
+The default image source path or base64. If isn't defined then it uses a SVG animated spinner.
 
 ### `type: ?string`
 The format type of the image (`png`, `svg+xml`, `jpg` or `gif`). Default: `*`.
