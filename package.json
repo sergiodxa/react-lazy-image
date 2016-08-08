@@ -1,0 +1,55 @@
+{
+  "name": "react-lazy-image",
+  "version": "1.0.0",
+  "description": "Component to render images and lazyload them if are in the viewport (or near to them).",
+  "main": "build/index.js",
+  "scripts": {
+    "lint": "eslint lib/index.js",
+    "prebuild": "npm run lint",
+    "build": "babel source -d build",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiodxa/react-lazy-image.git"
+  },
+  "keywords": [
+    "react",
+    "lazyload",
+    "image",
+    "ajax"
+  ],
+  "author": "Sergio Daniel Xalambrí <sergio@xalambri.com.ar> (http://sergio.xalambri.com.ar/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergiodxa/react-lazy-image/issues"
+  },
+  "homepage": "https://github.com/sergiodxa/react-lazy-image#readme",
+  "dependencies": {
+    "react": "15.3.0"
+  },
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-cli": "6.11.4",
+    "babel-eslint": "6.1.2",
+    "babel-plugin-transform-merge-sibling-variables": "6.8.0",
+    "babel-plugin-transform-minify-booleans": "6.8.0",
+    "babel-plugin-transform-node-env-inline": "6.8.0",
+    "babel-plugin-transform-react-constant-elements": "6.9.1",
+    "babel-plugin-transform-react-inline-elements": "6.8.0",
+    "babel-plugin-transform-remove-console": "6.8.0",
+    "babel-plugin-transform-remove-debugger": "6.8.0",
+    "babel-plugin-transform-simplify-comparison-operators": "6.8.0",
+    "babel-plugin-transform-undefined-to-void": "6.8.0",
+    "babel-preset-es2015": "6.13.2",
+    "babel-preset-es2016": "6.11.3",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-stage-0": "6.5.0",
+    "eslint": "3.2.2",
+    "eslint-config-airbnb": "10.0.0",
+    "eslint-plugin-flowtype": "2.4.0",
+    "eslint-plugin-import": "1.12.0",
+    "eslint-plugin-jsx-a11y": "2.0.1",
+    "eslint-plugin-react": "6.0.0"
+  }
+}
