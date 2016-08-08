@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>React-lazy-image by sergiodxa</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>React-lazy-image</h1>
+        <p>Component to render images and lazyload them if are in the viewport (or near to them).</p>
+
+        <p class="view"><a href="https://github.com/sergiodxa/react-lazy-image">View the Project on GitHub <small>sergiodxa/react-lazy-image</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/sergiodxa/react-lazy-image/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sergiodxa/react-lazy-image/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sergiodxa/react-lazy-image">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="react-lazy-image" class="anchor" href="#react-lazy-image" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>react-lazy-image</h1>
+
+<p>Component to render images and lazyload them if are in the viewport (or near to them).</p>
+
+<p>This component extends from <code>React.PureComponent</code> so it needs React.js v15.3.0 or superior.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm i -S react-lazy-image</pre></div>
+
+<h2>
+<a id="usage-example" class="anchor" href="#usage-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage example</h2>
+
+<div class="highlight highlight-source-js-jsx"><pre><span class="pl-k">import</span><span class="pl-smi"> Image</span><span class="pl-k"> from</span> <span class="pl-s"><span class="pl-pds">'</span>react-lazy-image<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">const</span> <span class="pl-smi">image</span><span class="pl-k"> =</span> &lt;<span class="pl-ent"><span class="pl-c1">Image</span></span> <span class="pl-e">source</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>https://placekitten.com/200/300<span class="pl-pds">"</span></span> /&gt;;</pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+
+<h3>
+<a id="onlayout-element-object--void" class="anchor" href="#onlayout-element-object--void" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>onLayout({ element: Object }): void</code>
+</h3>
+
+<p>Called everytime the component is rendered or updated. Default: <code>() =&gt; {}</code>.</p>
+
+<h3>
+<a id="onerror-element-object-error-error--void" class="anchor" href="#onerror-element-object-error-error--void" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>onError({ element: Object, error: Error }): void</code>
+</h3>
+
+<p>Called if the request to load the image failed. Default: <code>() =&gt; {}</code>.</p>
+
+<h3>
+<a id="onload-element-object--void" class="anchor" href="#onload-element-object--void" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>onLoad({ element: Object }): void</code>
+</h3>
+
+<p>Called after the load ended (either successfully or not). Default: <code>() =&gt; {}</code>.</p>
+
+<h3>
+<a id="onloadend-element-object--void" class="anchor" href="#onloadend-element-object--void" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>onLoadEnd({ element: Object }): void</code>
+</h3>
+
+<p>Called after the load ended successfully. Default: <code>() =&gt; {}</code>.</p>
+
+<h3>
+<a id="onloadstart-element-object--void" class="anchor" href="#onloadstart-element-object--void" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>onLoadStart({ element: Object }): void</code>
+</h3>
+
+<p>Called when the request started. Default: <code>() =&gt; {}</code>.</p>
+
+<h3>
+<a id="onabort-element-object--void" class="anchor" href="#onabort-element-object--void" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>onAbort({ element: Object }): void</code>
+</h3>
+
+<p>Called if the load of the image was aborted. Default: <code>() =&gt; {}</code>.</p>
+
+<h3>
+<a id="onprogress-element-object--void" class="anchor" href="#onprogress-element-object--void" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>onProgress({ element: Object }): void</code>
+</h3>
+
+<p>Called everytime the AJAX progress event is dispatched. Default: <code>() =&gt; {}</code>.</p>
+
+<h3>
+<a id="offset-number" class="anchor" href="#offset-number" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>offset: ?number</code>
+</h3>
+
+<p>Set the amount of pixel near the viewport the component should be to start the image load. Default: <code>0</code>.</p>
+
+<h3>
+<a id="source-string" class="anchor" href="#source-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>source: string</code>
+</h3>
+
+<p>The image source path to load.</p>
+
+<h3>
+<a id="defaultsource-string" class="anchor" href="#defaultsource-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>defaultSource: ?string</code>
+</h3>
+
+<p>The default image source path or base64. If isn't defined then it uses a SVG animated spinner.</p>
+
+<h3>
+<a id="type-string" class="anchor" href="#type-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>type: ?string</code>
+</h3>
+
+<p>The format type of the image (<code>png</code>, <code>svg+xml</code>, <code>jpg</code> or <code>gif</code>). Default: <code>*</code>.</p>
+
+<h3>
+<a id="minloaded-number" class="anchor" href="#minloaded-number" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>minLoaded: ?number</code>
+</h3>
+
+<p>The minimum download percentaje to avoid aborting the request if the image leaves the viewport. Default: <code>50</code>.</p>
+
+<h2>
+<a id="common-img-attributes" class="anchor" href="#common-img-attributes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Common <code>img</code> attributes</h2>
+
+<p>This component allow the usage of common <code>img</code> attributes like <code>alt</code>, <code>width</code>, <code>className</code>, etc. So you can use it as a normal <code>img</code> tag, just change <code>src</code> to <code>source</code> and (if you want to) add the other optional props.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Sergio Daniel Xalambrí</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/sergiodxa">sergiodxa</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
