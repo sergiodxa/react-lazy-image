@@ -1,0 +1,14 @@
+{
+  "presets": ["es2015", "es2016", "stage-0", "react"],
+  "plugins": [
+    "transform-merge-sibling-variables",
+    "transform-minify-booleans",
+    "transform-node-env-inline",
+    "transform-react-constant-elements",
+    "transform-react-inline-elements",
+    "transform-remove-console",
+    "transform-remove-debugger",
+    "transform-simplify-comparison-operators",
+    "transform-undefined-to-void"
+  ]
+}
