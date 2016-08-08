@@ -7,10 +7,10 @@ function readBlobFile(file: Blob): Promise {
   function promiseHandler(resolve: Function, reject: Function): FileReader {
     const reader: FileReader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onloadend = function onReadEnd() {
+    reader.onloadend = function onReadEnd(): void {
       if (reader.error) return reject(reader.error);
       return resolve(reader.result);
-    }
+    };
     return reader;
   }
 

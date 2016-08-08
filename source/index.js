@@ -110,6 +110,7 @@ class Image extends PureComponent {
    */
   componentWillUnmount() {
     window.removeEventListener('scroll', this.checkViewport);
+    this.request.abort();
   }
 
 
@@ -178,7 +179,7 @@ class Image extends PureComponent {
    * Handle the XHR load event
    * @param {Object} event The load event data
    */
-  handleLoad(event: Object): void {
+  handleLoad(): void {
     const element: Image = this;
     this.isRequesting = false;
     return this.props.onLoad({ element });
@@ -190,7 +191,7 @@ class Image extends PureComponent {
    * remove the scroll event listener and update the `state.image` value`
    * @param {Object} event The load end event data
    */
-  handleLoadEnd(event: Object): void {
+  handleLoadEnd(): void {
     const element: Image = this;
 
     // if the request status es between 200 and 300
@@ -199,7 +200,7 @@ class Image extends PureComponent {
       const blob: Blob = new Blob([this.request.response], { type: `image/${this.props.type}` });
       // read blob as a base64 string
       return readBlobFile(blob)
-        .then((image: string): void => {
+        .then((image: string) => {
           // set the image base64 string in the state
           this.setState({ image }, (): void => {
             // remove event scroll listener
@@ -215,7 +216,7 @@ class Image extends PureComponent {
           this.isRequesting = false;
           // if an error happens call the `onError` callback
           return this.props.onError({ error, element });
-        })
+        });
     }
 
     return null;
@@ -237,7 +238,7 @@ class Image extends PureComponent {
    * Handle the request abort event
    * @param {Object} event The abort event data
    */
-  handleAbort(event: Object): void {
+  handleAbort(): void {
     const element = this;
     this.isRequesting = false;
     return this.props.onAbort({ element });
@@ -341,12 +342,10 @@ class Image extends PureComponent {
       .keys(this.props)
       .filter((propName: string): boolean => ownProps.indexOf(propName) === -1)
       .reduce(
-        (props: PropType, propName: string): PropType => {
-          return {
-            ...props,
-            [propName]: this.props[propName],
-          };
-        },
+        (props: PropType, propName: string): PropType => ({
+          ...props,
+          [propName]: this.props[propName],
+        }),
         {},
       );
   }
