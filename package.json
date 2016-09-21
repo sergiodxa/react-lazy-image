@@ -25,8 +25,8 @@
     "url": "https://github.com/sergiodxa/react-lazy-image/issues"
   },
   "homepage": "https://github.com/sergiodxa/react-lazy-image#readme",
-  "dependencies": {
-    "react": "15.3.0"
+  "peerDependencies": {
+    "react": "^15.0.0"
   },
   "devDependencies": {
     "babel": "6.5.2",
