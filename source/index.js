@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
 import defaultSource from './spinner.js';
 import readBlobFile from './read-blob-file.js';
@@ -49,7 +49,7 @@ const defaultProps: PropType = {
  * Component to render an image using LazyLoad to request it only if the component is in
  * the viewport and abort the load if the component leaves the viewport
  */
-class Image extends PureComponent {
+class Image extends Component {
   static defaultProps = defaultProps;
 
   /**
