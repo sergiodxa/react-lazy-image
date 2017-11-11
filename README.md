@@ -1,4 +1,6 @@
 # react-lazy-image
+[![Actively Maintained](https://maintained.tech/badge.svg)](https://maintained.tech/)
+
 Component to render images and lazyload them if are in the viewport (or near to them).
 
 This component extends from `React.PureComponent` so it needs React.js v15.3.0 or superior.
