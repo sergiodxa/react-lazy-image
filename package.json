@@ -29,7 +29,7 @@
     "react": "^15.0.0"
   },
   "devDependencies": {
-    "babel": "6.5.2",
+    "babel": "6.23.0",
     "babel-cli": "6.11.4",
     "babel-eslint": "6.1.2",
     "babel-plugin-transform-merge-sibling-variables": "6.8.0",
